@@ -2,8 +2,8 @@
 {
     public class Pengguna_Kantor
     {
-        public int Id { get; set; }
-        public int Pengguna_Id { get; set; }
-        public int Kantor_Id { get; set; }
+        public int id { get; set; }
+        public int pengguna_id { get; set; }
+        public int kantor_id { get; set; }
     }
 }

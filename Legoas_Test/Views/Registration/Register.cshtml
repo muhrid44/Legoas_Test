@@ -1,0 +1,93 @@
+﻿@model RegisterModel
+
+@{
+}
+
+<h1>Register</h1>
+
+<h4>AkunModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="@Model.Akun.name" class="control-label">Username</label>
+                <input asp-for="@Model.Akun.name" class="form-control" />
+                <span asp-validation-for="@Model.Akun.name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Akun.password" class="control-label">Password</label>
+                <input type="password" asp-for="@Model.Akun.password" class="form-control" />
+                <span asp-validation-for="@Model.Akun.password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Pengguna.name" class="control-label">Full Name</label>
+                <input asp-for="@Model.Pengguna.name" class="form-control" />
+                <span asp-validation-for="@Model.Pengguna.name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Pengguna.address" class="control-label">Address</label>
+                <input asp-for="@Model.Pengguna.address" class="form-control" />
+                <span asp-validation-for="@Model.Pengguna.address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Pengguna.postalcode" class="control-label">Postal Code</label>
+                <input asp-for="@Model.Pengguna.postalcode" class="form-control" />
+                <span asp-validation-for="@Model.Pengguna.postalcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Pengguna.province" class="control-label">Province</label>
+                <input asp-for="@Model.Pengguna.province" class="form-control" />
+                <span asp-validation-for="@Model.Pengguna.province" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="@Model.Peran" class="control-label">Peran : </label>
+            @for (int i = 0; i < Model.Peran.Count; i++)
+            {
+                    <div>
+                        @Model.Peran[i].name
+                        @Html.CheckBoxFor(it => Model.Peran[i].isTrue)
+                        @Html.HiddenFor(it => Model.Peran[i].id)
+                    </div>
+            }
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="@Model.Layar" class="control-label">Layar : </label>
+                @for (int i = 0; i < Model.Layar.Count; i++)
+                {
+                    <div>
+                        @Model.Layar[i].name
+                        @Html.CheckBoxFor(it => Model.Layar[i].isTrue)
+                        @Html.HiddenFor(it => Model.Layar[i].id)
+                    </div>
+                }
+            </div>
+            <hr />
+            <div class="form-group">
+                <label asp-for="@Model.Kantor" class="control-label">Kantor : </label>
+                @for (int i = 0; i < Model.Kantor.Count; i++)
+                {
+                    <div>
+                        @Model.Kantor[i].name
+                        @Html.CheckBoxFor(it => Model.Kantor[i].isTrue)
+                        @Html.HiddenFor(it => Model.Kantor[i].id)
+                    </div>
+                }
+            </div>
+            <hr />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="/Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

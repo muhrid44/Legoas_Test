@@ -13,10 +13,10 @@ namespace Legoas_Test.Data
         public DbSet<AkunModel> Akun { get; set; }
         public DbSet<PenggunaModel> Pengguna { get; set; }
         public DbSet<Peran> Peran { get; set; }
+        public DbSet<Kantor> Kantor { get; set; }
+        public DbSet<Layar> Layar { get; set; }
         public DbSet<Akun_Layar> Akun_Layar { get; set; }
         public DbSet<Akun_Peran> Akun_Peran { get; set; }
         public DbSet<Pengguna_Kantor> Pengguna_Kantor { get; set; }
-
-
     }
 }

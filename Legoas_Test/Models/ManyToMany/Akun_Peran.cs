@@ -2,8 +2,8 @@
 {
     public class Akun_Peran
     {
-        public int Id { get; set; }
-        public int Akun_Id { get; set; }
-        public int Peran_Id { get; set; }
+        public int id { get; set; }
+        public int akun_id { get; set; }
+        public int peran_id { get; set; }
     }
 }

@@ -4,11 +4,12 @@ namespace Legoas_Test.Models
 {
     public class AkunModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Password { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime CreatedDate { get; set; }
-        public int Id_Pengguna { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string password { get; set; }
+
+        //[DataType(DataType.Date)]
+        //public DateTime createddate { get; set; }
+        public int id_pengguna { get; set; }
     }
 }

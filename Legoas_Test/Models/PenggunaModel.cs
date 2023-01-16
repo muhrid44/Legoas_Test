@@ -2,10 +2,10 @@
 {
     public class PenggunaModel
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public string PostalCode { get; set; }
-        public string Province { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string address { get; set; }
+        public string postalcode { get; set; }
+        public string province { get; set; }
     }
 }
